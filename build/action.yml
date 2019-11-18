@@ -1,0 +1,20 @@
+name: "build"
+description: "Dockerビルドを行う"
+inputs:
+  buildkit:
+    description: "Whether to use DockerBuildKit? [true/false]"
+    default: true
+    required: false
+  workdir:
+    description: "The working directory path when docker building."
+    required: false
+  dockerfile:
+    description: "Name of Dockerfile"
+    default: "Dockerfile"
+    required: false
+  add_options:
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"
+

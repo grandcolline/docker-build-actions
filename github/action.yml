@@ -1,0 +1,28 @@
+name: "github"
+description: "Push docker image to GitHub Packages"
+inputs:
+  registry:
+    description: "Name of GitHub Package's registry"
+    default: "docker.pkg.github.com"
+    required: false
+  repository:
+    description: "Name of repository"
+    required: false
+  image:
+    description: "Name of image."
+    required: true
+  tags:
+    description: "List of tags to push. Write separated tags by space."
+    default: "latest"
+    required: false
+  username:
+    description: "The login username for the GitHub"
+    default: "github-actions"
+    required: false
+  token:
+    description: "The login token for the GitHub"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+

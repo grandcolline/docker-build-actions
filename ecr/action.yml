@@ -1,0 +1,27 @@
+name: "ecr"
+description: "Push docker image to ECR"
+inputs:
+  registry:
+    description: "Name of ECR's registry."
+    required: false
+  image:
+    description: "Name of ECR's image."
+    required: true
+  tags:
+    description: "List of tags to push. Write separated tags by space."
+    default: "latest"
+    required: false
+  region:
+    description: "Region of ECR's registry."
+    default: "ap-northeast-1"
+    required: false
+  access_key_id:
+    description: "Access key for IAM User."
+    required: true
+  secret_access_key:
+    description: "Secret access key for IAM User."
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+

@@ -1,0 +1,20 @@
+name: "dockerhub"
+description: "Push docker image to DockerHub"
+inputs:
+  image:
+    description: "Name of DockerHub's image."
+    required: true
+  tags:
+    description: "List of tags to push. Write separated tags by space."
+    default: "latest"
+    required: false
+  username:
+    description: "The login username for the DockerHub registry."
+    required: true
+  password:
+    description: "The login password for the DockerHub registry."
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+

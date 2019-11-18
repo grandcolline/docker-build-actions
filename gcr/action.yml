@@ -1,0 +1,21 @@
+name: "gcr"
+description: "Push docker image to GCR"
+inputs:
+  registry:
+    description: "Name of GCR's registry"
+    default: "gcr.io"
+    required: false
+  image:
+    description: "Name of image"
+    required: true
+  tags:
+    description: "List of tags to push. Write separated tags by space"
+    default: "latest"
+    required: false
+  service_account_key:
+    description: "Service account key to push to GCR"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
